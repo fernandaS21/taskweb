@@ -1,8 +1,8 @@
-// Simulação de Banco de Dados local/API enquanto o seu Back-End Node.js não é conectado
-// Isso permite que o professor teste 100% das funções do Front-End imediatamente.
+// Simulação de Banco de Dados local/API enquanto o Back-End Node.js não é conectado
+// Isso permiti testar 100% das funções do Front-End imediatamente.
 let mockDatabase = [
-    { id: 1, descricao: "Estudar modelo PEAS", concluida: true },
-    { id: 2, descricao: "Subir projeto para o GitHub", concluida: false }
+    { id: 1, descricao: "Estudar modelo PEAS", concluido: true },
+    { id: 2, descricao: "Subir projeto para o GitHub", concluido: false }
 ];
 
 // Seleção de Sensores (Elementos do DOM)
@@ -34,8 +34,8 @@ function renderizarInterface(tarefas) {
 
     tarefas.forEach(tarefa => {
         const li = document.createElement('li');
-        li.className = `task-item ${tarefa.concluidia ? 'completed' : ''}`;
-        if(tarefa.concluido) li.classList.add('completed');
+        
+        li.className = `task-item ${tarefa.concluido ? 'completed' : ''}`;
 
         li.innerHTML = `
             <div class="task-left">
